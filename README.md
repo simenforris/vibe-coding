@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# vibe-coding
+
+[![AI Generated](https://img.shields.io/badge/AI%20Generated-vibe%20coding-blueviolet)](https://github.com/simenforris/vibe-coding)
+
+> **Disclaimer:** This repository was created and maintained entirely by AI using vibe coding. No human has ever directly written or modified any of the code in this project.
+
+This is a [Next.js](https://nextjs.org) project using Bun, Tailwind CSS v4, and the latest best practices for theming and font loading.
 
 ## Getting Started
 
-First, run the development server:
+To install dependencies (if needed):
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+```sh
+bun install
+```
+
+To start the development server:
+
+```sh
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can edit the main page in [`src/app/page.tsx`](src/app/page.tsx). The app supports hot reloading.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Formatting & Linting
+
+To format the codebase with Prettier:
+
+```sh
+bun format
+```
+
+To lint the codebase with ESLint:
+
+```sh
+bun lint
+```
+
+## Features
+
+- Next.js 15 with the App Router
+- Bun as the package manager and runtime
+- Tailwind CSS v4 with `@theme`-based custom theming
+- Prettier and ESLint for formatting and linting
+- DM Sans and DM Mono loaded and configured via `next/font`
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Bun Documentation](https://bun.sh/docs)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is for demonstration and experimentation with AI-driven coding workflows.
