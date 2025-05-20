@@ -2,6 +2,9 @@
   "editor.formatOnSave": true,
   "[javascript][typescript][json][css][markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
   }
 }
 // All language formatters above use the same Prettier extension
