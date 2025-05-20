@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "[javascript][typescript][json][css][markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
+// All language formatters above use the same Prettier extension
