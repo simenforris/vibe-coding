@@ -1,0 +1,71 @@
+import type { HiscoreSkill } from '@/lib/types';
+
+// Map RS3 skill names (as returned by hiscores) to icon URLs on the RuneScape Wiki
+export const RS3_SKILL_ICON_URLS: Record<string, string> = {
+  Attack: 'https://runescape.wiki/images/Attack-icon.png',
+  Defence: 'https://runescape.wiki/images/Defence-icon.png',
+  Strength: 'https://runescape.wiki/images/Strength-icon.png',
+  Hitpoints: 'https://runescape.wiki/images/Constitution-icon.png',
+  Ranged: 'https://runescape.wiki/images/Ranged-icon.png',
+  Prayer: 'https://runescape.wiki/images/Prayer-icon.png',
+  Magic: 'https://runescape.wiki/images/Magic-icon.png',
+  Cooking: 'https://runescape.wiki/images/Cooking-icon.png',
+  Woodcutting: 'https://runescape.wiki/images/Woodcutting-icon.png',
+  Fletching: 'https://runescape.wiki/images/Fletching-icon.png',
+  Fishing: 'https://runescape.wiki/images/Fishing-icon.png',
+  Firemaking: 'https://runescape.wiki/images/Firemaking-icon.png',
+  Crafting: 'https://runescape.wiki/images/Crafting-icon.png',
+  Smithing: 'https://runescape.wiki/images/Smithing-icon.png',
+  Mining: 'https://runescape.wiki/images/Mining-icon.png',
+  Herblore: 'https://runescape.wiki/images/Herblore-icon.png',
+  Agility: 'https://runescape.wiki/images/Agility-icon.png',
+  Thieving: 'https://runescape.wiki/images/Thieving-icon.png',
+  Slayer: 'https://runescape.wiki/images/Slayer-icon.png',
+  Farming: 'https://runescape.wiki/images/Farming-icon.png',
+  Runecrafting: 'https://runescape.wiki/images/Runecrafting-icon.png',
+  Hunter: 'https://runescape.wiki/images/Hunter-icon.png',
+  Construction: 'https://runescape.wiki/images/Construction-icon.png',
+  Summoning: 'https://runescape.wiki/images/Summoning-icon.png',
+  Dungeoneering: 'https://runescape.wiki/images/Dungeoneering-icon.png',
+  Divination: 'https://runescape.wiki/images/Divination-icon.png',
+  Invention: 'https://runescape.wiki/images/Invention-icon.png',
+  Archaeology: 'https://runescape.wiki/images/Archaeology-icon.png',
+  Necromancy: 'https://runescape.wiki/images/Necromancy-icon.png',
+};
+
+// Prefer ID-based mapping to avoid name mismatches
+export const RS3_SKILL_ICON_BY_ID: Record<number, string> = {
+  1: RS3_SKILL_ICON_URLS.Attack,
+  2: RS3_SKILL_ICON_URLS.Defence,
+  3: RS3_SKILL_ICON_URLS.Strength,
+  4: RS3_SKILL_ICON_URLS.Hitpoints,
+  5: RS3_SKILL_ICON_URLS.Ranged,
+  6: RS3_SKILL_ICON_URLS.Prayer,
+  7: RS3_SKILL_ICON_URLS.Magic,
+  8: RS3_SKILL_ICON_URLS.Cooking,
+  9: RS3_SKILL_ICON_URLS.Woodcutting,
+  10: RS3_SKILL_ICON_URLS.Fletching,
+  11: RS3_SKILL_ICON_URLS.Fishing,
+  12: RS3_SKILL_ICON_URLS.Firemaking,
+  13: RS3_SKILL_ICON_URLS.Crafting,
+  14: RS3_SKILL_ICON_URLS.Smithing,
+  15: RS3_SKILL_ICON_URLS.Mining,
+  16: RS3_SKILL_ICON_URLS.Herblore,
+  17: RS3_SKILL_ICON_URLS.Agility,
+  18: RS3_SKILL_ICON_URLS.Thieving,
+  19: RS3_SKILL_ICON_URLS.Slayer,
+  20: RS3_SKILL_ICON_URLS.Farming,
+  21: RS3_SKILL_ICON_URLS.Runecrafting,
+  22: RS3_SKILL_ICON_URLS.Hunter,
+  23: RS3_SKILL_ICON_URLS.Construction,
+  24: RS3_SKILL_ICON_URLS.Summoning,
+  25: RS3_SKILL_ICON_URLS.Dungeoneering,
+  26: RS3_SKILL_ICON_URLS.Divination,
+  27: RS3_SKILL_ICON_URLS.Invention,
+  28: RS3_SKILL_ICON_URLS.Archaeology,
+  29: RS3_SKILL_ICON_URLS.Necromancy,
+};
+
+export function getSkillIconUrl(skill: HiscoreSkill): string | undefined {
+  return RS3_SKILL_ICON_BY_ID[skill.id] || RS3_SKILL_ICON_URLS[skill.name];
+}
