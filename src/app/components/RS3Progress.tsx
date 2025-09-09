@@ -4,6 +4,7 @@ import { cookies } from 'next/headers';
 import { Suspense } from 'react';
 import ResultsSkeleton from '@/app/components/ResultsSkeleton';
 import RS3Results from '@/app/components/RS3Results';
+import RecentSearchesClient from '@/app/components/RecentSearchesClient';
 
 export default async function RS3Progress({ rsn }: { rsn: string }) {
   const name = rsn.trim();
@@ -20,15 +21,7 @@ export default async function RS3Progress({ rsn }: { rsn: string }) {
   }
   if (name) {
     const next = [name, ...recent.filter((r) => r.toLowerCase() !== name.toLowerCase())].slice(0, 5);
-    try {
-      cookieStore.set('recent_rsn', JSON.stringify(next), {
-        path: '/',
-        httpOnly: false,
-        sameSite: 'lax',
-      });
-    } catch {
-      // If setting cookies is restricted in this context, ignore gracefully
-    }
+    // Show updated list immediately; client will persist cookie
     recent = next;
   }
 
@@ -75,6 +68,9 @@ export default async function RS3Progress({ rsn }: { rsn: string }) {
           <RS3Results rsn={name} />
         </Suspense>
       )}
+
+      {/* Client helper to persist recent searches cookie */}
+      <RecentSearchesClient rsn={name} recent={recent} />
     </div>
   );
 }
