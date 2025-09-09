@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+  
+[build.environment]
+  NODE_VERSION = "24"
+
+# Enable the official Next.js plugin for SSR and routing
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
