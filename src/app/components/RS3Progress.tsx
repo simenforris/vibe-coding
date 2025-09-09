@@ -49,7 +49,7 @@ export default async function RS3Progress({ rsn }: { rsn: string }) {
         />
         <button
           type="submit"
-          className="rounded-md bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[var(--color-primary-light)] dark:hover:bg-[var(--color-primary-dark)]"
+          className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-light dark:hover:bg-primary-dark"
         >
           View
         </button>
