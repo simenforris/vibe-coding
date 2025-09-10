@@ -1,10 +1,6 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-# Run lint-staged using bunx if available, else npx
+# Run lint-staged using bunx if available, else npx (no deprecated husky wrapper)
 if command -v bunx >/dev/null 2>&1; then
-  bunx lint-staged
+  exec bunx lint-staged
 else
-  npx lint-staged
+  exec npx lint-staged
 fi
-
