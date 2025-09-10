@@ -1,6 +1,6 @@
 import React from 'react';
 import type { GroupEntry, GroupScoresResponse } from '@/lib/groupIron';
-import { formatCompact, formatNumber } from '@/app/group-iron/utils/format';
+import { formatCompact, formatNumber } from '@/lib/format';
 
 interface Props {
   data: GroupScoresResponse;
