@@ -190,7 +190,7 @@ export default async function Page({ searchParams }: { searchParams?: Promise<Se
                       </div>
                     </div>
 
-                    <div className="max-h-[50vh] overflow-y-auto rounded-md border border-neutral-200 sm:max-h-[60vh] lg:max-h-[70vh] dark:border-neutral-800">
+                    <div className="max-h-[60vh] overflow-y-auto rounded-md border border-neutral-200 dark:border-neutral-800">
                       <div className="sticky top-0 z-10 grid grid-cols-[3fr_1fr_1fr] items-center border-b border-neutral-200 bg-white px-2 py-1 text-xs text-neutral-500 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400">
                         <div>Group</div>
                         <div className="text-right whitespace-nowrap">Total level</div>
