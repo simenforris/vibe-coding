@@ -27,7 +27,9 @@ export default async function RS3Results({ rsn }: { rsn: string }) {
       <Summary rsn={name} hiscore={hiscore} qpTotal={qpTotal} />
 
       {!hiscore && (
-        <div className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">Unable to load hiscores.</div>
+        <div className="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
+          Unable to load hiscores.
+        </div>
       )}
       {hiscore && <LevelsGrid skills={hiscore.skills} />}
 

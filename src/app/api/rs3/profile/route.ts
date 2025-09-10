@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
   if (!rsn) return new Response(JSON.stringify({ error: 'Missing rsn' }), { status: 400 });
 
   const url = `https://apps.runescape.com/runemetrics/profile/profile?user=${encodeURIComponent(
-    rsn,
+    rsn
   )}&activities=${encodeURIComponent(activities)}`;
   try {
     const res = await fetch(url, {
@@ -31,4 +31,3 @@ export async function GET(req: NextRequest) {
     return new Response(JSON.stringify({ error: 'Upstream error' }), { status: 502 });
   }
 }
-

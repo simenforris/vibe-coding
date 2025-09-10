@@ -29,7 +29,16 @@ body {
 
 @layer base {
   /* Default text uses DM Sans via Tailwind token */
-  body { @apply font-sans; }
+  body {
+    @apply font-sans;
+  }
   /* Headings use DM Mono */
-  h1, h2, h3, h4, h5, h6 { @apply font-mono; }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-mono;
+  }
 }

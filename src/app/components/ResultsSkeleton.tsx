@@ -1,6 +1,6 @@
 export default function ResultsSkeleton() {
   return (
-    <div className="mt-8 space-y-8 animate-pulse">
+    <div className="mt-8 animate-pulse space-y-8">
       <section>
         <div className="h-6 w-32 rounded bg-neutral-200 dark:bg-neutral-800" />
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -49,4 +49,3 @@ export default function ResultsSkeleton() {
     </div>
   );
 }
-

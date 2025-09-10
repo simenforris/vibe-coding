@@ -7,7 +7,7 @@ export async function fetchHiscore(rsn: string): Promise<HiscoreResponse | null>
   try {
     const r = await fetch(
       `https://secure.runescape.com/m=hiscore/index_lite.json?player=${encodeURIComponent(rsn)}`,
-      { headers: { 'User-Agent': UA }, next: { revalidate: 120 } },
+      { headers: { 'User-Agent': UA }, next: { revalidate: 120 } }
     );
     if (!r.ok) return null;
     return (await r.json()) as HiscoreResponse;
@@ -20,7 +20,7 @@ export async function fetchQuests(rsn: string): Promise<RuneMetricsQuestsRespons
   try {
     const r = await fetch(
       `https://apps.runescape.com/runemetrics/quests?user=${encodeURIComponent(rsn)}`,
-      { headers: { 'User-Agent': UA }, next: { revalidate: 300 } },
+      { headers: { 'User-Agent': UA }, next: { revalidate: 300 } }
     );
     if (!r.ok) return null;
     return (await r.json()) as RuneMetricsQuestsResponse;
@@ -29,13 +29,16 @@ export async function fetchQuests(rsn: string): Promise<RuneMetricsQuestsRespons
   }
 }
 
-export async function fetchProfile(rsn: string, activities = 20): Promise<RuneMetricsProfile | null> {
+export async function fetchProfile(
+  rsn: string,
+  activities = 20
+): Promise<RuneMetricsProfile | null> {
   try {
     const r = await fetch(
       `https://apps.runescape.com/runemetrics/profile/profile?user=${encodeURIComponent(
-        rsn,
+        rsn
       )}&activities=${activities}`,
-      { headers: { 'User-Agent': UA }, next: { revalidate: 120 } },
+      { headers: { 'User-Agent': UA }, next: { revalidate: 120 } }
     );
     if (!r.ok) return null;
     return (await r.json()) as RuneMetricsProfile;

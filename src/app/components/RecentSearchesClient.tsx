@@ -1,8 +1,10 @@
-"use client";
+'use client';
 import { useEffect } from 'react';
 
 function parseCookie(name: string): string | null {
-  const match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()\[\]\\/+^])/g, '\\$1') + '=([^;]*)'));
+  const match = document.cookie.match(
+    new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()\[\]\\/+^])/g, '\\$1') + '=([^;]*)')
+  );
   return match ? decodeURIComponent(match[1]) : null;
 }
 
@@ -31,4 +33,3 @@ export default function RecentSearchesClient({ rsn, recent }: { rsn: string; rec
 
   return null;
 }
-

@@ -8,11 +8,7 @@ export const metadata: Metadata = {
   description: 'View RS3 levels, quest points, and recent achievements',
 };
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams?: Promise<SearchParams>;
-}) {
+export default async function Page({ searchParams }: { searchParams?: Promise<SearchParams> }) {
   const sp = (await searchParams) ?? {};
   const rsn = (sp.rsn ?? '').toString().trim();
   return <RS3Progress rsn={rsn} />;

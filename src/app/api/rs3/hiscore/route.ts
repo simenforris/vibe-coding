@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
   if (!rsn) return new Response(JSON.stringify({ error: 'Missing rsn' }), { status: 400 });
 
   const url = `https://secure.runescape.com/m=hiscore/index_lite.json?player=${encodeURIComponent(
-    rsn,
+    rsn
   )}`;
   try {
     const res = await fetch(url, {
@@ -30,4 +30,3 @@ export async function GET(req: NextRequest) {
     return new Response(JSON.stringify({ error: 'Upstream error' }), { status: 502 });
   }
 }
-
