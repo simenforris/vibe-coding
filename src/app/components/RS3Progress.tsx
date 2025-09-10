@@ -1,9 +1,6 @@
 // Server wrapper: renders form, recent searches, and a Suspense boundary
 
 import { cookies } from 'next/headers';
-import { Suspense } from 'react';
-import ResultsSkeleton from '@/app/components/ResultsSkeleton';
-import RS3Results from '@/app/components/RS3Results';
 import RecentSearchesClient from '@/app/components/RecentSearchesClient';
 
 export default async function RS3Progress({ rsn }: { rsn: string }) {
@@ -66,11 +63,7 @@ export default async function RS3Progress({ rsn }: { rsn: string }) {
         </div>
       )}
 
-      {name && (
-        <Suspense fallback={<ResultsSkeleton />}>
-          <RS3Results rsn={name} />
-        </Suspense>
-      )}
+      {/* Results rendered via parallel route slot (@results). See src/app/@results */}
 
       {/* Client helper to persist recent searches cookie */}
       <RecentSearchesClient rsn={name} recent={recent} />

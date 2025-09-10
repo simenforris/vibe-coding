@@ -35,12 +35,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  results,
 }: Readonly<{
   children: React.ReactNode;
+  results: React.ReactNode;
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} ${dmMono.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        {results}
+      </body>
     </html>
   );
 }
