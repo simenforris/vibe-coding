@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import type { GroupEntry, GroupScoresResponse } from '@/lib/rs3/groupIron';
+import type { GroupEntry, GroupScoresResponse } from '@/lib/groupIron';
 import { headers } from 'next/headers';
 
 type SearchParams = { [key: string]: string | string[] | undefined };
@@ -57,7 +57,7 @@ export default async function Page({ searchParams }: { searchParams?: Promise<Se
     const host = hdrs.get('x-forwarded-host') ?? hdrs.get('host') ?? 'localhost:3000';
     const inferredBase = `${proto}://${host}`;
     const base = configuredBase.startsWith('http') ? configuredBase : inferredBase;
-    const apiPath = `/api/rs3/groups/scores?${params.toString()}`;
+    const apiPath = `/api/groups/scores?${params.toString()}`;
     const apiUrl = (base.endsWith('/') ? base.slice(0, -1) : base) + apiPath;
     try {
       const res = await fetch(apiUrl, {

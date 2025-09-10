@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- Source: `src/app` (App Router). Pages live in route segments (e.g., `src/app/rs3-character/page.tsx`).
+- Source: `src/app` (App Router). Pages live in route segments (e.g., `src/app/character/page.tsx`).
 - Global styles: `src/app/globals.css`. Public assets: `public/`.
 - Configuration: `next.config.ts`, `eslint.config.mjs`, `tsconfig.json`, `.prettierrc`.
 - Imports: use `@/*` path alias for `src/*`.
@@ -28,7 +28,7 @@
 - Tips: For component tests, add a `jsdom` environment later if needed.
 
 ## Commit & Pull Request Guidelines
-- Commits: short, imperative; optional types/scopes, e.g., `feat: add rs3-character route`, `chore: update ESLint` (see history).
+- Commits: short, imperative; optional types/scopes, e.g., `feat: add character route`, `chore: update ESLint` (see history).
 - PRs: clear description, screenshots for UI changes, linked issues, and notes on accessibility/perf when relevant.
 - Keep PRs focused; ensure `lint` and `format` pass and the app builds (`bun run build`).
 

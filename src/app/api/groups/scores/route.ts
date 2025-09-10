@@ -1,5 +1,5 @@
 import type { NextRequest } from 'next/server';
-import { isGroupScoresResponse } from '@/lib/rs3/groupIron';
+import { isGroupScoresResponse } from '@/lib/groupIron';
 
 export const revalidate = 120;
 
